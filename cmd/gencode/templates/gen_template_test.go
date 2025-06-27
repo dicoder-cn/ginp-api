@@ -50,8 +50,8 @@ func TestReplace(t *testing.T) {
 	gen.ReplaceAndWriteTemplate(oPathRepository, tPathRepository, replaceData)
 
 	//6.开始生成：api文件
-	tPathApi := desc.TemplatePathAddApi()
-	oPathApi := desc.PathAddApi(demoEntityLineName, demoApiLineName)
-	println(oPathApi + "\n" + tPathApi)
-	gen.ReplaceAndWriteTemplate(oPathApi, tPathApi, replaceData)
+	// tPathApi := desc.TemplatePathAddApi()
+	// oPathApi := desc.PathAddApi(demoEntityLineName, demoApiLineName)
+	// println(oPathApi + "\n" + tPathApi)
+	// gen.ReplaceAndWriteTemplate(oPathApi, tPathApi, replaceData)
 }

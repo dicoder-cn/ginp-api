@@ -24,10 +24,10 @@ func GenAddApi() {
 	apiDir := filepath.Join(controllerDir, selectDirName)
 
 	//获取实体名称
-	entityLineName := getEntityLineName(apiDir)
-	if entityLineName == "" {
-		return
-	}
+	// entityLineName := getEntityLineName(apiDir)
+	// if entityLineName == "" {
+	// 	return
+	// }
 
 	//提示用户输入api名称
 	apiName := gen.Input(Select3ApiName, nil)
@@ -38,13 +38,19 @@ func GenAddApi() {
 	apiNameBig := gen.NameToCameBig(apiName)
 	apiNameLine := gen.NameToLine(apiNameBig)
 	//扫描apiDir下的所有文件匹配到c.go结尾的文件
-	apiPath := PathAddApi(entityLineName, apiNameLine)
-	replaceData := getBaseReplaceMap(entityLineName)
-	replaceData[ReplaceApiNameBig] = apiNameBig                          //api名称 大驼峰
-	replaceData[ReplaceApiNameLine] = apiNameLine                        //api名称 下划线
-	replaceData[ReplacePackageName] = gen.NameToAllSmall(entityLineName) //包名 全小写
-	replaceData[ReplaceEntityName] = gen.NameToCameBig(entityLineName)   //实体名称 大驼峰
-	println("entityLineName:", gen.NameToAllSmall(entityLineName))
+	apiPath := filepath.Join(apiDir, apiNameLine+".a.go")
+	replaceData := getBaseReplaceMap(selectDirName)
+	replaceData[ReplaceApiNameBig] = apiNameBig   //api名称 大驼峰
+	replaceData[ReplaceApiNameLine] = apiNameLine //api名称 下划线
+
+	//如果selectDirName以c开头,则去掉c
+	packname := selectDirName
+	if len(selectDirName) > 0 && selectDirName[0] == 'c' {
+		packname = strings.TrimLeft(selectDirName, "c")
+	}
+	replaceData[ReplacePackageName] = packname         //包名 全小写
+	replaceData[ReplaceEntityName] = selectDirName[1:] //实体名称 大驼峰
+	println("selectDirName:", gen.NameToAllSmall(selectDirName))
 	gen.ReplaceAndWriteTemplate(TemplatePathAddApi(), apiPath, replaceData)
 
 }

@@ -25,7 +25,7 @@ func init() {
 		HttpType:       ginp.HttpPost,                //http请求类型
 		NeedLogin:      false,                        //是否需要登录
 		NeedPermission: false,                        //是否需要鉴权
-		PermissionName: "$ENTITY_NAME$.create",           //完整的权限名称,会跟权限表匹配
+		PermissionName: "$PACKAGE_NAME$.create",           //完整的权限名称,会跟权限表匹配
 		Swagger: &ginp.SwaggerInfo{
 			Title:       "create $ENTITY_LINE$",
 			Description: "",
@@ -40,7 +40,7 @@ func init() {
 		HttpType:       ginp.HttpPost,                  //http请求类型
 		NeedLogin:      false,                          //是否需要登录
 		NeedPermission: false,                          //是否需要鉴权
-		PermissionName: "$ENTITY_NAME$.findById",           //完整的权限名称,会跟权限表匹配
+		PermissionName: "$PACKAGE_NAME$.findById",           //完整的权限名称,会跟权限表匹配
 		Swagger: &ginp.SwaggerInfo{
 			Title:       "find $ENTITY_LINE$ by id",
 			Description: "",
@@ -55,7 +55,7 @@ func init() {
 		HttpType:       ginp.HttpPost,                //http请求类型
 		NeedLogin:      true,                         //是否需要登录
 		NeedPermission: true,                         //是否需要鉴权
-		PermissionName: "$ENTITY_NAME$.update",           //完整的权限名称,会跟权限表匹配
+		PermissionName: "$PACKAGE_NAME$.update",           //完整的权限名称,会跟权限表匹配
 		Swagger: &ginp.SwaggerInfo{
 			Title:       "modify $ENTITY_LINE$",
 			Description: "",
@@ -70,7 +70,7 @@ func init() {
 		HttpType:       ginp.HttpPost,                //http请求类型
 		NeedLogin:      true,                         //是否需要登录
 		NeedPermission: true,                         //是否需要鉴权
-		PermissionName: "$ENTITY_NAME$.delete",           //完整的权限名称,会跟权限表匹配
+		PermissionName: "$PACKAGE_NAME$.delete",           //完整的权限名称,会跟权限表匹配
 		Swagger: &ginp.SwaggerInfo{
 			Title:       "delet $ENTITY_LINE$",
 			Description: "",
@@ -85,7 +85,7 @@ func init() {
 		HttpType:       ginp.HttpPost,                //http请求类型
 		NeedLogin:      true,                         //是否需要登录
 		NeedPermission: true,                         //是否需要鉴权
-		PermissionName: "$ENTITY_NAME$.search",           //完整的权限名称,会跟权限表匹配
+		PermissionName: "$PACKAGE_NAME$.search",           //完整的权限名称,会跟权限表匹配
 		Swagger: &ginp.SwaggerInfo{
 			Title:       "search $ENTITY_LINE$",
 			Description: "",

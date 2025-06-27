@@ -3,12 +3,13 @@ package c$PACKAGE_NAME$
 import (
 	"github.com/DicoderCn/ginp"
 )
+
 const Api$API_NAME_BIG$ = "/api/$ENTITY_LINE$/$API_NAME_LINE$" //API Path
 
 func $API_NAME_BIG$(c *ginp.ContextPlus) {
 	var requestParams *Request$API_NAME_BIG$
 	if err := c.ShouldBindJSON(&requestParams); err != nil {
-		c.FailData("request param error:" + err.Error())
+		c.Fail("request param error:" + err.Error())
 		return
 	}
 
@@ -16,6 +17,7 @@ func $API_NAME_BIG$(c *ginp.ContextPlus) {
 	//s$PACKAGE_NAME$.Model().Create(&entity.$ENTITY_NAME${})
 	//c.SuccessData(&Respond$API_NAME_BIG${})
 }
+
 
 
 type Request$API_NAME_BIG$ struct {
@@ -31,7 +33,7 @@ func init() {
 		HttpType:       ginp.HttpPost,                //http请求类型
 		NeedLogin:      false,                        //是否需要登录
 		NeedPermission: false,                        //是否需要鉴权
-		PermissionName: "$ENTITY_NAME$.$API_NAME_LINE$",     //完整的权限名称,会跟权限表匹配
+		PermissionName: "$PACKAGE_NAME$.$API_NAME_LINE$",     //完整的权限名称,会跟权限表匹配
 		Swagger: &ginp.SwaggerInfo{
 			Title:       "$API_NAME_LINE$",
 			Description: "",

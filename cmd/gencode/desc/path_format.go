@@ -55,10 +55,10 @@ func PathEntity(lineName string) string {
 	return filepath.Join(GetDirEntidy(), lineName+".e.go")
 }
 
-// 组装 api 路径
-func PathAddApi(entityLineName string, apiNameLine string) string {
-	entityLineName = gen.NameToLine(entityLineName)
-	apiNameLine = gen.NameToLine(apiNameLine)
-	entityAllSmallName := gen.NameToAllSmall(entityLineName)
-	return filepath.Join(GetDirController(), "c"+entityAllSmallName, apiNameLine+".a.go")
-}
+// // 组装 api 路径
+// func PathAddApi(apiDir string, apiNameLine string) string {
+// 	entityLineName = gen.NameToLine(entityLineName)
+// 	apiNameLine = gen.NameToLine(apiNameLine)
+// 	entityAllSmallName := gen.NameToAllSmall(apiDir)
+// 	return filepath.Join(apiDir, apiNameLine+".a.go")
+// }
