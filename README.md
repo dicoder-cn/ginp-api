@@ -79,8 +79,18 @@ gapi gen const
 ```bash
 # 指定多个实体 -p指定父级目录 -e 指定实体名称列表
 gapi gen crud -e tableNameDemoTable1,tableNameDemoTable2 -p demo
-# 着急定一个实体 -p指定父级目录 -e 指定实体名称
+# 指定一个实体 -p指定父级目录 -e 指定实体名称
 gapi gen crud -e tableNameDemoTable1 -p demo
+```
+
+### 删除现有实体的crud文件
+```bash
+# 删除多个实体的CRUD文件 -p指定父级目录 -e 指定实体名称列表
+gapi gen rm crud -e tableNameDemoTable1,tableNameDemoTable2 -p demo
+# 删除一个实体的CRUD文件 -p指定父级目录 -e 指定实体名称
+gapi gen rm crud -e tableNameDemoTable1 -p demo
+# 交互式删除（不指定参数时进入交互模式）
+gapi gen rm crud
 ```
 
 ## 贡献
