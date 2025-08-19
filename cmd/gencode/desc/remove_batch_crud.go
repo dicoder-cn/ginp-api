@@ -89,6 +89,9 @@ func RemoveBatchCrudWithParent(entities []string, parentDir string) {
 				deletedCount++
 			}
 
+			// 7. 删除路由导入
+			RemoveImportRouterPackage(lineName, parentDir)
+
 			// 删除空目录
 			removeEmptyDirectories(lineName, parentDir)
 

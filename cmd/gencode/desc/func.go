@@ -48,3 +48,45 @@ func AddImportRouterPackage(lineName string, parentDir ...string) {
 		println("outers_entry import写入成功")
 	}
 }
+
+// RemoveImportRouterPackage 从路由导入文件中删除指定实体的导入语句
+func RemoveImportRouterPackage(lineName string, parentDir ...string) {
+	allSmallName := gen.NameToAllSmall(lineName)
+	content, err := filehelper.ReadContent(PathRouterEntry())
+	if err != nil {
+		println(err.Error())
+		return
+	}
+
+	// 构建要删除的导入语句
+	importStr := ""
+	if len(parentDir) > 0 && parentDir[0] != "" {
+		importStr = RouterReplaceStr + parentDir[0] + "/c" + allSmallName + `"`
+	} else {
+		importStr = RouterReplaceStr + "c" + allSmallName + `"`
+	}
+
+	// 检查导入语句是否存在
+	if !strings.Contains(content, importStr) {
+		println("路由导入不存在，跳过删除:", importStr)
+		return
+	}
+
+	// 删除导入语句（包括换行符和制表符）
+	newContent := strings.Replace(content, "\t"+importStr+"\n", "", -1)
+	// 如果上面的替换没有成功，尝试其他可能的格式
+	if newContent == content {
+		newContent = strings.Replace(content, importStr+"\n", "", -1)
+	}
+	if newContent == content {
+		newContent = strings.Replace(content, importStr, "", -1)
+	}
+
+	err = filehelper.WriteContent(PathRouterEntry(), newContent)
+	if err != nil {
+		println("路由导入删除失败:" + err.Error())
+		return
+	} else {
+		println("路由导入删除成功:", importStr)
+	}
+}
