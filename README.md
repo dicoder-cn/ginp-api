@@ -8,7 +8,7 @@ GINP-API 是一个基于 Gin 框架的 API 开发工具，提供了代码生成�
 
 1. 克隆仓库
 ```bash
-git clone https://github.com/yourusername/ginp-api.git
+git clone https://github.com/dicoder-cn/ginp-api.git
 cd ginp-api
 ```
 
