@@ -2,10 +2,10 @@ package suser
 
 import (
 	"fmt"
+
 	"ginp-api/internal/app/gapi/entity"
 	"ginp-api/internal/app/gapi/model/user/muser"
 	scommon "ginp-api/internal/app/gapi/service/system/common"
-
 	"ginp-api/internal/db/mysql"
 	"ginp-api/pkg/where"
 )
@@ -41,13 +41,21 @@ func UpdateUserInfo(user *entity.User, emailCode string) error {
 		}
 	}
 
-
 	//如果密码不为空
 	var passwordChanged bool
 	if user.Password != "" {
 		// 验证新密码是否与旧密码不同
-		passwordValid, _ := VerifyPassword(user.Password, oldUser.Password)
-		if err != nil || !passwordValid {
+		// 前端传来的是明文新密码，需要与哈希后的旧密码进行比较
+		passwordValid, verifyErr := VerifyPassword(user.Password, oldUser.Password)
+		if verifyErr != nil {
+			return fmt.Errorf("password verification failed: %v", verifyErr)
+		}
+		// 如果新密码与旧密码相同，则不需要修改
+		if passwordValid {
+			// 新密码与旧密码相同，清空密码字段，不进行修改
+			user.Password = ""
+		} else {
+			// 新密码与旧密码不同，需要修改
 			passwordChanged = true
 		}
 	}
@@ -56,9 +64,9 @@ func UpdateUserInfo(user *entity.User, emailCode string) error {
 		//如果邮箱验证码不为空
 		if emailCode != "" {
 			//验证邮箱验证码
-			err := scommon.EmailInstance.VerifyCode(user.Email, emailCode)
-			if err {
-				return fmt.Errorf("email code verify failed: %v", err)
+			verifyErr := scommon.EmailInstance.VerifyCode(user.Email, emailCode)
+			if verifyErr {
+				return fmt.Errorf("email code verify failed: %v", verifyErr)
 			}
 		} else {
 			return fmt.Errorf("email code is empty")
@@ -66,9 +74,9 @@ func UpdateUserInfo(user *entity.User, emailCode string) error {
 
 		//修改密码
 		if passwordChanged {
-			hashedPassword, err := HashPassword(user.Password)
-			if err != nil {
-				return fmt.Errorf("failed to hash password: %w", err)
+			hashedPassword, hashErr := HashPassword(user.Password)
+			if hashErr != nil {
+				return fmt.Errorf("failed to hash password: %w", hashErr)
 			}
 			user.Password = hashedPassword
 		}
@@ -82,7 +90,6 @@ func UpdateUserInfo(user *entity.User, emailCode string) error {
 			}
 		}
 	}
-
 
 	wheres := where.New(muser.FieldID, "=", user.ID).Conditions()
 	err = Model().Update(wheres, user)
