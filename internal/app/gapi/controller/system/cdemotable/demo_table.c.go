@@ -6,7 +6,7 @@ import (
 	"ginp-api/internal/app/gapi/service/system/sdemotable"
 	"ginp-api/pkg/where"
 
-	"github.com/DicoderCn/ginp"
+	"ginp-api/pkg/ginp"
 )
 
 func FindByID(c *ginp.ContextPlus) {

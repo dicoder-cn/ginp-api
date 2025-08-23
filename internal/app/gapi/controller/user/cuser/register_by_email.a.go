@@ -5,7 +5,7 @@ import (
 	scommon "ginp-api/internal/app/gapi/service/system/common"
 	"ginp-api/internal/app/gapi/service/user/suser"
 
-	"github.com/DicoderCn/ginp"
+	"ginp-api/pkg/ginp"
 )
 
 const ApiRegisterByEmail = "/api/user/register_by_email" //API Path

@@ -34,11 +34,11 @@ func InitDb(ip, port, userName, dbName, dbPwd string) {
 	)
 
 	// 生成DSN连接字符串
-	dsn := fmt.Sprintf("host=%v user=%v password=%v dbname=%v port=%v sslmode=disable TimeZone=Asia/Shanghai", 
+	dsn := fmt.Sprintf("host=%v user=%v password=%v dbname=%v port=%v sslmode=disable TimeZone=Asia/Shanghai",
 		ip, userName, dbPwd, dbName, port)
-	
+
 	fmt.Printf("PostgreSQL连接配置：主机=%v, 端口=%v, 数据库=%v\n", ip, port, dbName)
-	
+
 	var err error
 	db, err = gorm.Open(postgres.Open(dsn), &gorm.Config{
 		Logger: newLogger, //日志参数
@@ -48,7 +48,7 @@ func InitDb(ip, port, userName, dbName, dbPwd string) {
 		fmt.Println("PostgreSQL连接失败: " + err.Error())
 		panic(err)
 	}
-	
+
 	fmt.Println("PostgreSQL数据库连接成功！")
 }
 
@@ -63,4 +63,4 @@ func GetWriteDb() *gorm.DB {
 	//返回数据库实例的副本
 	copyDb := *db
 	return &copyDb
-} 
+}

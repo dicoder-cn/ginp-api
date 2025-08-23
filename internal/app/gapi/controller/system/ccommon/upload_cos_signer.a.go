@@ -4,7 +4,7 @@ import (
 	"ginp-api/configs"
 	"ginp-api/pkg/cos"
 
-	"github.com/DicoderCn/ginp"
+	"ginp-api/pkg/ginp"
 )
  
 const ApiUploadCosSigner = "/api/common/upload_cos_signer" //API Path

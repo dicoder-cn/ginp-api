@@ -1,7 +1,7 @@
 package cindex
 
 import (
-	"github.com/DicoderCn/ginp"
+	"ginp-api/pkg/ginp"
 )
 
 func init() {

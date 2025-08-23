@@ -4,7 +4,7 @@ import (
 	scommon "ginp-api/internal/app/gapi/service/system/common"
 	"regexp"
 
-	"github.com/DicoderCn/ginp"
+	"ginp-api/pkg/ginp"
 )
 
 const ApiSendEmailCode = "/api/common/send_email_code" //API Path

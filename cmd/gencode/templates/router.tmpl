@@ -4,7 +4,7 @@ import (
 	"ginp-api/internal/app/gapi/dto/comdto"
 	"ginp-api/internal/app/gapi/entity"
 
-	"github.com/DicoderCn/ginp"
+	"ginp-api/pkg/ginp"
 )
 
 const (

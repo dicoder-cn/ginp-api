@@ -3,7 +3,7 @@ package cuser
 import (
 	"ginp-api/internal/app/gapi/service/user/suser"
 
-	"github.com/DicoderCn/ginp"
+	"ginp-api/pkg/ginp"
 )
 
 func LoginByUsername(c *ginp.ContextPlus) {

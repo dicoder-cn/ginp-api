@@ -4,7 +4,7 @@ import (
 	"ginp-api/internal/app/gapi/entity"
 	"ginp-api/internal/app/gapi/service/user/suser"
 
-	"github.com/DicoderCn/ginp"
+	"ginp-api/pkg/ginp"
 )
 
 const ApiUpdateUserInfo = "/api/user/update_user_info" //API Path

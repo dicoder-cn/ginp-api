@@ -8,7 +8,7 @@ import (
 	"strings"
 	"time"
 
-	"github.com/DicoderCn/ginp"
+	"ginp-api/pkg/ginp"
 )
 
 const ApiCommonUpload = "/api/common/upload" //这是一个测试接口连通性的接口

@@ -7,7 +7,7 @@ import (
 
 	"ginp-api/pkg/where"
 
-	"github.com/DicoderCn/ginp"
+	"ginp-api/pkg/ginp"
 )
 
 func FindByID(ctx *ginp.ContextPlus) {
