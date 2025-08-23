@@ -18,7 +18,7 @@ func GetPwd() string {
 func GetDirProject() string {
 	pwd := GetPwd()
 	if strings.Contains(pwd, "/cmd") {
-		// /Users/xiaod/projects_new/my/ginp-api/cmd/gencode
+		// /Users/xiaod/projects_new/my/ginpapi/cmd/gencode
 		arr := strings.Split(pwd, "/cmd")
 		return arr[0]
 	}

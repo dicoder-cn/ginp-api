@@ -1,7 +1,7 @@
 package cmd
 
 import (
-	"ginp-api/cmd/gencode/desc"
+	"ginpapi/cmd/gencode/desc"
 	"github.com/spf13/cobra"
 	"strings"
 )
@@ -9,8 +9,8 @@ import (
 // rmCmd 表示删除代码的命令
 var rmCmd = &cobra.Command{
 	Use:   "rm",
-	Short: "删除 ginp-api 生成的代码文件",
-	Long: `删除 ginp-api 框架生成的代码文件。
+	Short: "删除 ginpapi 生成的代码文件",
+	Long: `删除 ginpapi 框架生成的代码文件。
 
 此命令可以删除实体的CRUD代码文件。`,
 	Run: func(cmd *cobra.Command, args []string) {
@@ -23,7 +23,7 @@ var rmCmd = &cobra.Command{
 var crudRmCmd = &cobra.Command{
 	Use:   "crud",
 	Short: "批量删除多个实体的CRUD代码",
-	Long:  `删除 ginp-api 框架批量生成的多个实体的CRUD代码，可以一次性删除多个实体的所有相关文件。`,
+	Long:  `删除 ginpapi 框架批量生成的多个实体的CRUD代码，可以一次性删除多个实体的所有相关文件。`,
 	Run: func(cmd *cobra.Command, args []string) {
 		entities, _ := cmd.Flags().GetString("entities")
 		parentDir, _ := cmd.Flags().GetString("parent")

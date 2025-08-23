@@ -1,7 +1,7 @@
 package cuser
 
 import (
-	"ginp-api/internal/app/gapi/entity"
+	"ginpapi/internal/app/gapi/entity"
 )
 
 type RespondLogin struct {

@@ -1,8 +1,8 @@
 package desc
 
 import (
-	"ginp-api/internal/gen"
-	"ginp-api/pkg/filehelper"
+	"ginpapi/internal/gen"
+	"ginpapi/pkg/filehelper"
 	"strings"
 )
 

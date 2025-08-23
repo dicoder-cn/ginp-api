@@ -1,8 +1,8 @@
 package start
 
 import (
-	"ginp-api/configs"
-	"ginp-api/internal/app/gapi/router"
+	"ginpapi/configs"
+	"ginpapi/internal/app/gapi/router"
 
 	"github.com/gin-gonic/gin"
 )

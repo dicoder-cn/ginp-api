@@ -1,8 +1,8 @@
 package entity
 
 import (
-	"ginp-api/internal/app/gapi/typ"
-	"ginp-api/internal/gen"
+	"ginpapi/internal/app/gapi/typ"
+	"ginpapi/internal/gen"
 	"time"
 )
 

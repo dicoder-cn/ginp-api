@@ -1,11 +1,11 @@
 package cuser
 
 import (
-	"ginp-api/internal/app/gapi/entity"
-	scommon "ginp-api/internal/app/gapi/service/system/common"
-	"ginp-api/internal/app/gapi/service/user/suser"
+	"ginpapi/internal/app/gapi/entity"
+	scommon "ginpapi/internal/app/gapi/service/system/common"
+	"ginpapi/internal/app/gapi/service/user/suser"
 
-	"ginp-api/pkg/ginp"
+	"ginpapi/pkg/ginp"
 )
 
 const ApiRegisterByEmail = "/api/user/register_by_email" //API Path

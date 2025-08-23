@@ -1,6 +1,6 @@
 package main
 
-import "ginp-api/internal/app/gapi/start"
+import "ginpapi/internal/app/gapi/start"
 
 func main() {
 	start.Run()

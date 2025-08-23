@@ -1,8 +1,8 @@
 package sdemotable
 
 import (
-	"ginp-api/internal/app/gapi/model/system/mdemotable"
-	"ginp-api/internal/db/mysql"
+	"ginpapi/internal/app/gapi/model/system/mdemotable"
+	"ginpapi/internal/db/mysql"
 )
 
 var DemoTable *mdemotable.Model

@@ -4,7 +4,7 @@ import (
 	"context"
 	"errors"
 	"fmt"
-	"ginp-api/pkg/utils"
+	"ginpapi/pkg/utils"
 	"net/http"
 	"net/url"
 	"strings"

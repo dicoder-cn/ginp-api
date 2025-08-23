@@ -1,6 +1,6 @@
 package desc
 
-import "ginp-api/internal/gen"
+import "ginpapi/internal/gen"
 
 const (
 	ReplaceEntityName = "$ENTITY_NAME$"
@@ -10,7 +10,7 @@ const (
 	ReplaceApiNameBig       = "$API_NAME_BIG$"
 	ReplaceApiNameLine      = "$API_NAME_LINE$"
 	PlaceholderRouterImport = "//{{placeholder_router_import}}//"
-	RouterReplaceStr        = `_ "ginp-api/internal/app/gapi/controller/`
+	RouterReplaceStr        = `_ "ginpapi/internal/app/gapi/controller/`
 )
 
 // 基础替换数据 传入大驼峰如 $ENTITY_NAME$Group

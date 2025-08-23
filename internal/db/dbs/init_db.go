@@ -1,10 +1,10 @@
 package dbs
 
 import (
-	"ginp-api/configs"
-	"ginp-api/internal/db/mysql"
-	"ginp-api/internal/db/pgsql"
-	"ginp-api/internal/db/sqlite"
+	"ginpapi/configs"
+	"ginpapi/internal/db/mysql"
+	"ginpapi/internal/db/pgsql"
+	"ginpapi/internal/db/sqlite"
 )
 
 func InitDb(dbType string) {

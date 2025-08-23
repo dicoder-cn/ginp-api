@@ -1,7 +1,7 @@
 package cmd
 
 import (
-	"ginp-api/cmd/gencode/desc"
+	"ginpapi/cmd/gencode/desc"
 	"github.com/spf13/cobra"
 	"strings"
 )
@@ -10,7 +10,7 @@ import (
 var crudCmd = &cobra.Command{
 	Use:   "crud",
 	Short: "批量生成多个实体的CRUD代码",
-	Long:  `为 ginp-api 框架批量生成多个实体的CRUD代码，可以一次性生成多个实体的所有相关文件。`,
+	Long:  `为 ginpapi 框架批量生成多个实体的CRUD代码，可以一次性生成多个实体的所有相关文件。`,
 	Run: func(cmd *cobra.Command, args []string) {
 		entities, _ := cmd.Flags().GetString("entities")
 		parentDir, _ := cmd.Flags().GetString("parent")

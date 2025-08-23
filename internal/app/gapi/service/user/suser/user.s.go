@@ -3,11 +3,11 @@ package suser
 import (
 	"fmt"
 
-	"ginp-api/internal/app/gapi/entity"
-	"ginp-api/internal/app/gapi/model/user/muser"
-	scommon "ginp-api/internal/app/gapi/service/system/common"
-	"ginp-api/internal/db/mysql"
-	"ginp-api/pkg/where"
+	"ginpapi/internal/app/gapi/entity"
+	"ginpapi/internal/app/gapi/model/user/muser"
+	scommon "ginpapi/internal/app/gapi/service/system/common"
+	"ginpapi/internal/db/mysql"
+	"ginpapi/pkg/where"
 )
 
 var User *muser.Model

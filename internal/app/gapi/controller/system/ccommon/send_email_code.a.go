@@ -1,10 +1,10 @@
 package ccommon
 
 import (
-	scommon "ginp-api/internal/app/gapi/service/system/common"
+	scommon "ginpapi/internal/app/gapi/service/system/common"
 	"regexp"
 
-	"ginp-api/pkg/ginp"
+	"ginpapi/pkg/ginp"
 )
 
 const ApiSendEmailCode = "/api/common/send_email_code" //API Path

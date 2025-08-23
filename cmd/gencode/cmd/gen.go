@@ -1,15 +1,15 @@
 package cmd
 
 import (
-	"ginp-api/cmd/gencode/desc"
+	"ginpapi/cmd/gencode/desc"
 	"github.com/spf13/cobra"
 )
 
 // genCmd 表示生成代码的命令
 var genCmd = &cobra.Command{
 	Use:   "gen",
-	Short: "为 ginp-api 生成代码",
-	Long: `为 ginp-api 框架生成代码。
+	Short: "为 ginpapi 生成代码",
+	Long: `为 ginpapi 框架生成代码。
 
 此命令可以生成实体、字段常量和API控制器。`,
 	Run: func(cmd *cobra.Command, args []string) {
@@ -22,7 +22,7 @@ var genCmd = &cobra.Command{
 var entityCmd = &cobra.Command{
 	Use:   "entity",
 	Short: "创建实体并生成CRUD代码",
-	Long:  `为 ginp-api 框架创建实体并生成CRUD代码。`,
+	Long:  `为 ginpapi 框架创建实体并生成CRUD代码。`,
 	Run: func(cmd *cobra.Command, args []string) {
 		entityName, _ := cmd.Flags().GetString("create")
 		parentDir, _ := cmd.Flags().GetString("parent")
@@ -42,7 +42,7 @@ var entityCmd = &cobra.Command{
 var constCmd = &cobra.Command{
 	Use:   "const",
 	Short: "生成实体字段常量",
-	Long:  `为 ginp-api 框架生成实体字段常量。`,
+	Long:  `为 ginpapi 框架生成实体字段常量。`,
 	Run: func(cmd *cobra.Command, args []string) {
 		desc.GetPwd()
 		desc.GenFields()
@@ -53,7 +53,7 @@ var constCmd = &cobra.Command{
 var apiCmd = &cobra.Command{
 	Use:   "api",
 	Short: "添加API接口控制器",
-	Long:  `为 ginp-api 框架添加API接口控制器。`,
+	Long:  `为 ginpapi 框架添加API接口控制器。`,
 	Run: func(cmd *cobra.Command, args []string) {
 		apiName, _ := cmd.Flags().GetString("add")
 		dirPath, _ := cmd.Flags().GetString("dir")

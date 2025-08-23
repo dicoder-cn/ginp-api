@@ -1,10 +1,10 @@
 package cuser
 
 import (
-	"ginp-api/internal/app/gapi/dto/comdto"
-	"ginp-api/internal/app/gapi/entity"
+	"ginpapi/internal/app/gapi/dto/comdto"
+	"ginpapi/internal/app/gapi/entity"
 
-	"ginp-api/pkg/ginp"
+	"ginpapi/pkg/ginp"
 )
 
 const (

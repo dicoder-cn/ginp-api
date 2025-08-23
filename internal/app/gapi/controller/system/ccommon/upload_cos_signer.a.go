@@ -1,10 +1,10 @@
 package ccommon
 
 import (
-	"ginp-api/configs"
-	"ginp-api/pkg/cos"
+	"ginpapi/configs"
+	"ginpapi/pkg/cos"
 
-	"ginp-api/pkg/ginp"
+	"ginpapi/pkg/ginp"
 )
  
 const ApiUploadCosSigner = "/api/common/upload_cos_signer" //API Path

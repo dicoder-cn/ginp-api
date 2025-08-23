@@ -1,11 +1,10 @@
 // 为解决不一致的依赖管理问题，请重新运行 "go mod vendor"。
 // 有关此问题的更多详细信息，请参阅 https://github.com/golang/go/issues/39164。
-module ginp-api
+module ginpapi
 
 go 1.24.0
 
 require (
-	ginp-api/pkg/ginp v0.0.0-00010101000000-000000000000
 	github.com/spf13/cobra v1.9.1
 	github.com/spf13/viper v1.20.1
 	golang.org/x/crypto v0.38.0
@@ -76,5 +75,3 @@ require (
 	gorm.io/driver/sqlite v1.5.7
 	gorm.io/gorm v1.26.1
 )
-
-replace ginp-api/pkg/ginp => ./pkg/ginp

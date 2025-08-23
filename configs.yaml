@@ -1,3 +1,18 @@
+db:
+    mysql:
+        dbname: ""
+        ip: 127.0.0.1
+        port: "3306"
+        pwd: "123456"
+        user: root
+    pgsql:
+        dbname: ""
+        ip: 127.0.0.1
+        port: "5432"
+        pwd: "123456"
+        user: root
+    sqlite:
+        db_path: data.db
 email:
     client:
         account: dicoder@126.com

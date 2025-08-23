@@ -1,14 +1,14 @@
 package ccommon
 
 import (
-	"ginp-api/pkg/utils"
+	"ginpapi/pkg/utils"
 	"io"
 	"os"
 	"path/filepath"
 	"strings"
 	"time"
 
-	"ginp-api/pkg/ginp"
+	"ginpapi/pkg/ginp"
 )
 
 const ApiCommonUpload = "/api/common/upload" //这是一个测试接口连通性的接口

@@ -3,10 +3,10 @@ package suser
 import (
 	"errors"
 	"fmt"
-	"ginp-api/internal/app/gapi/entity"
-	"ginp-api/internal/app/gapi/model/user/muser"
+	"ginpapi/internal/app/gapi/entity"
+	"ginpapi/internal/app/gapi/model/user/muser"
 
-	"ginp-api/pkg/where"
+	"ginpapi/pkg/where"
 	"time"
 
 	"github.com/golang-jwt/jwt/v4"
@@ -18,7 +18,7 @@ type MyClaims struct {
 	jwt.RegisteredClaims     //官方自带字段
 }
 
-const secretKey = "https://github.com/dicoder-cn/ginp-api"
+const secretKey = "https://github.com/dicoder-cn/ginpapi"
 
 // JwtGenerateToken 生成token
 // uid 用户id

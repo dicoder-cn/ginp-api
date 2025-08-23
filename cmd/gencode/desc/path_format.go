@@ -1,7 +1,7 @@
 package desc
 
 import (
-	"ginp-api/internal/gen"
+	"ginpapi/internal/gen"
 	"path/filepath"
 )
 

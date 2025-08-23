@@ -1,10 +1,10 @@
 package cuser
 
 import (
-	"ginp-api/internal/app/gapi/entity"
-	"ginp-api/internal/app/gapi/service/user/suser"
+	"ginpapi/internal/app/gapi/entity"
+	"ginpapi/internal/app/gapi/service/user/suser"
 
-	"ginp-api/pkg/ginp"
+	"ginpapi/pkg/ginp"
 )
 
 const ApiUpdateUserInfo = "/api/user/update_user_info" //API Path

@@ -1,13 +1,13 @@
 package cuser
 
 import (
-	"ginp-api/internal/app/gapi/dto/comdto"
-	"ginp-api/internal/app/gapi/entity"
-	"ginp-api/internal/app/gapi/service/user/suser"
+	"ginpapi/internal/app/gapi/dto/comdto"
+	"ginpapi/internal/app/gapi/entity"
+	"ginpapi/internal/app/gapi/service/user/suser"
 
-	"ginp-api/pkg/where"
+	"ginpapi/pkg/where"
 
-	"ginp-api/pkg/ginp"
+	"ginpapi/pkg/ginp"
 )
 
 func FindByID(ctx *ginp.ContextPlus) {

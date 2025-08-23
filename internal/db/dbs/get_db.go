@@ -1,9 +1,9 @@
 package dbs
 
 import (
-	"ginp-api/internal/db/mysql"
-	"ginp-api/internal/db/pgsql"
-	"ginp-api/internal/db/sqlite"
+	"ginpapi/internal/db/mysql"
+	"ginpapi/internal/db/pgsql"
+	"ginpapi/internal/db/sqlite"
 
 	"gorm.io/gorm"
 )

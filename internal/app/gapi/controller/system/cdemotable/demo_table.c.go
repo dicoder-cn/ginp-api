@@ -1,12 +1,12 @@
 package cdemotable
 
 import (
-	"ginp-api/internal/app/gapi/dto/comdto"
-	"ginp-api/internal/app/gapi/entity"
-	"ginp-api/internal/app/gapi/service/system/sdemotable"
-	"ginp-api/pkg/where"
+	"ginpapi/internal/app/gapi/dto/comdto"
+	"ginpapi/internal/app/gapi/entity"
+	"ginpapi/internal/app/gapi/service/system/sdemotable"
+	"ginpapi/pkg/where"
 
-	"ginp-api/pkg/ginp"
+	"ginpapi/pkg/ginp"
 )
 
 func FindByID(c *ginp.ContextPlus) {

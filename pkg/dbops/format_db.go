@@ -1,7 +1,7 @@
 package dbops
 
 import (
-	"ginp-api/pkg/where"
+	"ginpapi/pkg/where"
 
 	"gorm.io/gorm"
 )

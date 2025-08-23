@@ -1,7 +1,7 @@
 package main
 
 import (
-	"ginp-api/cmd/gencode/cmd"
+	"ginpapi/cmd/gencode/cmd"
 )
 
 func main() {

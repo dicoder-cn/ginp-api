@@ -12,8 +12,8 @@ var version = "0.1.2"
 // rootCmd 表示在不调用任何子命令时的基本命令
 var rootCmd = &cobra.Command{
 	Use:   "gapi",
-	Short: "GAPI - ginp-api的代码生成工具",
-	Long: `GAPI 是一个用于生成 ginp-api 框架代码的命令行工具。
+	Short: "GAPI - ginpapi的代码生成工具",
+	Long: `GAPI 是一个用于生成 ginpapi 框架代码的命令行工具。
 
 它可以生成实体、字段常量和API控制器。`,
 	Run: func(cmd *cobra.Command, args []string) {

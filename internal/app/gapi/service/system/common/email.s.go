@@ -2,7 +2,7 @@ package scommon
 
 import (
 	"fmt"
-	"ginp-api/pkg/email"
+	"ginpapi/pkg/email"
 	"math/rand"
 	"strconv"
 	"time"

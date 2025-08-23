@@ -1,6 +1,6 @@
 package configs
 
-import "ginp-api/pkg/cfg"
+import "ginpapi/pkg/cfg"
 
 const (
 	ConfigKeyServerPort = "server.port"

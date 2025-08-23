@@ -1,9 +1,9 @@
 package cuser
 
 import (
-	"ginp-api/internal/app/gapi/service/user/suser"
+	"ginpapi/internal/app/gapi/service/user/suser"
 
-	"ginp-api/pkg/ginp"
+	"ginpapi/pkg/ginp"
 )
 
 func LoginByUsername(c *ginp.ContextPlus) {

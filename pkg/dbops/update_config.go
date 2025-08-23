@@ -6,7 +6,7 @@
 package dbops
 
 import (
-	"ginp-api/pkg/utils"
+	"ginpapi/pkg/utils"
 	"reflect"
 	"strings"
 	"unicode"

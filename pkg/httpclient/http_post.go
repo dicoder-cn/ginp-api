@@ -4,7 +4,7 @@ import (
 	"bytes"
 	"encoding/json"
 	"fmt"
-	"ginp-api/pkg/logger"
+	"ginpapi/pkg/logger"
 	"io"
 	"net/http"
 	"time"

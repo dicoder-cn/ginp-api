@@ -1,7 +1,7 @@
 package router
 
 import (
-	"ginp-api/pkg/ginp"
+	"ginpapi/pkg/ginp"
 
 	"github.com/gin-gonic/gin"
 )
