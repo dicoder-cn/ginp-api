@@ -1,6 +1,6 @@
 package comdto
 
-import "ginpapi/pkg/where"
+import "ginp-api/pkg/where"
 
 // ReqSearch 搜索参数
 type ReqSearch struct {

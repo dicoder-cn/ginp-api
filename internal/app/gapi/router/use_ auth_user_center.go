@@ -20,7 +20,7 @@ const (
 // ✅ 全局变量：JWKS URL
 var JwksURL string
 
-// ✅ 全局变量：固定的 KeySet（因为自建用户中心JWKS是固定的）
+// ✅ 全局变量：固定的 KeySet （因为自建用户中心JWKS是固定的）
 var keySet jwk.Set
 
 // InitJWK 初始化 JWKS 加载器

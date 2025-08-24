@@ -1,7 +1,8 @@
 package cmd
 
 import (
-	"ginpapi/cmd/gencode/desc"
+	"ginp-api/cmd/gencode/desc"
+
 	"github.com/spf13/cobra"
 )
 
@@ -57,7 +58,7 @@ var apiCmd = &cobra.Command{
 	Run: func(cmd *cobra.Command, args []string) {
 		apiName, _ := cmd.Flags().GetString("add")
 		dirPath, _ := cmd.Flags().GetString("dir")
-		
+
 		if apiName != "" && dirPath != "" {
 			// 设置API名称和目录路径并生成代码
 			desc.GetPwd()
@@ -72,16 +73,16 @@ var apiCmd = &cobra.Command{
 
 func init() {
 	rootCmd.AddCommand(genCmd)
-	
+
 	// 添加子命令到gen命令
 	genCmd.AddCommand(entityCmd)
 	genCmd.AddCommand(constCmd)
 	genCmd.AddCommand(apiCmd)
-	
+
 	// 为entity命令添加标志
 	entityCmd.Flags().StringP("create", "c", "", "要创建的实体名称（大驼峰命名，例如：UserGroup）")
 	entityCmd.Flags().StringP("parent", "p", "", "父级目录名称（例如：user）")
-	
+
 	// 为api命令添加标志
 	apiCmd.Flags().StringP("add", "a", "", "要添加的API名称（大驼峰命名，例如：GetUserInfo）")
 	apiCmd.Flags().StringP("dir", "d", "", "API控制器的目录路径（例如：user/cuser）")

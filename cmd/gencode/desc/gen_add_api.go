@@ -2,7 +2,7 @@ package desc
 
 import (
 	"fmt"
-	"ginpapi/internal/gen"
+	"ginp-api/internal/gen"
 	"os"
 	"path/filepath"
 	"strconv"

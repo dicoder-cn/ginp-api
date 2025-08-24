@@ -1,8 +1,8 @@
 package script
 
 import (
-	"ginpapi/cmd/gencode/desc"
-	"ginpapi/internal/gen"
+	"ginp-api/cmd/gencode/desc"
+	"ginp-api/internal/gen"
 	"testing"
 )
 

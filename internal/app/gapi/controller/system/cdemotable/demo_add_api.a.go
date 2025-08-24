@@ -1,7 +1,7 @@
 package cdemotable
 
 import (
-	"ginpapi/pkg/ginp"
+	"ginp-api/pkg/ginp"
 )
 
 func DemoAddApi(c *ginp.ContextPlus) {

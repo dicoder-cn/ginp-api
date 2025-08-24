@@ -1,6 +1,6 @@
 package start
 
-import "ginpapi/internal/app/gapi/entity"
+import "ginp-api/internal/app/gapi/entity"
 
 const ConfigFile = "../configs/configs.yaml"
 

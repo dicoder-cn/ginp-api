@@ -2,7 +2,7 @@ package desc
 
 import (
 	"fmt"
-	"ginpapi/internal/gen"
+	"ginp-api/internal/gen"
 	"os"
 	"path/filepath"
 	"strings"
@@ -49,10 +49,10 @@ func GenAddApiWithParams(apiName, dirPath string) {
 
 	// 准备替换数据
 	replaceData := map[string]string{
-		ReplaceApiNameBig:  apiName,      // API名称 大驼峰
-		ReplaceApiNameLine: apiNameLine,  // API名称 下划线
-		ReplacePackageName: packageName,  // 包名 全小写
-		ReplaceEntityName:  entityName,   // 实体名称 大驼峰
+		ReplaceApiNameBig:  apiName,        // API名称 大驼峰
+		ReplaceApiNameLine: apiNameLine,    // API名称 下划线
+		ReplacePackageName: packageName,    // 包名 全小写
+		ReplaceEntityName:  entityName,     // 实体名称 大驼峰
 		ReplaceLineName:    entityLineName, // 实体名称 下划线
 	}
 

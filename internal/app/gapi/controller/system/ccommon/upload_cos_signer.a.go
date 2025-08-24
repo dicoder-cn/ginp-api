@@ -1,18 +1,18 @@
 package ccommon
 
 import (
-	"ginpapi/configs"
-	"ginpapi/pkg/cos"
+	"ginp-api/configs"
+	"ginp-api/pkg/cos"
 
-	"ginpapi/pkg/ginp"
+	"ginp-api/pkg/ginp"
 )
- 
+
 const ApiUploadCosSigner = "/api/common/upload_cos_signer" //API Path
 
 // RequestUploadCosSigner 请求结构体，可按需添加字段
 type RequestUploadCosSigner struct {
-	FileSuffix string `json:"file_suffix"` // 文件后缀
-	StudioId   uint   `json:"studio_id,omitempty"`   // 工作室ID 非必须，默认0
+	FileSuffix     string `json:"file_suffix"`                // 文件后缀
+	StudioId       uint   `json:"studio_id,omitempty"`        // 工作室ID 非必须，默认0
 	CustomFileName string `json:"custom_file_name,omitempty"` // 自定义文件名 非必须，默认“”
 }
 
@@ -45,9 +45,9 @@ func UploadCosSigner(c *ginp.ContextPlus) {
 		AppID:     configs.TencentCosBucketAppId(),
 		//自定义文件名
 		CustomFileName: req.CustomFileName,
-		Duration:  int64(configs.TencentCosDuration()), //单位秒
-		UserId:    userId,                              //用户ID
-		StudioId:  req.StudioId,                        //工作室ID，如果为0则表示为用户上传的数据
+		Duration:       int64(configs.TencentCosDuration()), //单位秒
+		UserId:         userId,                              //用户ID
+		StudioId:       req.StudioId,                        //工作室ID，如果为0则表示为用户上传的数据
 	}
 
 	stsSigner, err := cos.NewSTSSigner(config)
@@ -79,10 +79,10 @@ func init() {
 	ginp.RouterAppend(ginp.RouterItem{
 		Path:           ApiUploadCosSigner,                    //api路径
 		Handlers:       ginp.RegisterHandler(UploadCosSigner), //对应控制器
-		HttpType:       ginp.HttpPost,                      //http请求类型
-		NeedLogin:      false,                              //是否需要登录
-		NeedPermission: false,                              //是否需要鉴权
-		PermissionName: "common.upload_cos_pre",            //完整的权限名称,会跟权限表匹配
+		HttpType:       ginp.HttpPost,                         //http请求类型
+		NeedLogin:      false,                                 //是否需要登录
+		NeedPermission: false,                                 //是否需要鉴权
+		PermissionName: "common.upload_cos_pre",               //完整的权限名称,会跟权限表匹配
 		Swagger: &ginp.SwaggerInfo{
 			Title:       "upload_cos_pre",
 			Description: "获取 COS 直传所需参数",

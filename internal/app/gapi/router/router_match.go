@@ -1,10 +1,9 @@
 package router
 
 import (
+	"ginp-api/pkg/ginp"
 	"regexp"
 	"strings"
-
-	"github.com/DicoderCn/ginp"
 )
 
 // findRouterByPath 根据路径查找对应的路由项

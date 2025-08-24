@@ -6,7 +6,7 @@
 package sqlite
 
 import (
-	"ginpapi/pkg/filehelper"
+	"ginp-api/pkg/filehelper"
 	"log"
 	"os"
 	"path/filepath"

@@ -2,7 +2,7 @@ package start
 
 import (
 	"fmt"
-	"ginpapi/internal/db/dbs"
+	"ginp-api/internal/db/dbs"
 )
 
 func startDB() {

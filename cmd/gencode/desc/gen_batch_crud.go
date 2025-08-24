@@ -2,7 +2,7 @@ package desc
 
 import (
 	"fmt"
-	"ginpapi/internal/gen"
+	"ginp-api/internal/gen"
 	"strings"
 )
 
@@ -104,10 +104,10 @@ func GenBatchCrudInteractive() {
 
 	// 获取实体名称列表
 	entitiesInput := gen.Input("请输入要生成CRUD代码的实体名称列表，多个实体用逗号分隔（例如：UserGroup,UserRole）：", nil)
-	
+
 	// 分割实体名称列表
 	entities := strings.Split(entitiesInput, ",")
-	
+
 	// 清理实体名称（去除空格）
 	cleanedEntities := []string{}
 	for _, entity := range entities {
@@ -116,7 +116,7 @@ func GenBatchCrudInteractive() {
 			cleanedEntities = append(cleanedEntities, entity)
 		}
 	}
-	
+
 	// 调用批量生成函数
 	GenBatchCrud(cleanedEntities)
 }

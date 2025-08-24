@@ -2,8 +2,8 @@ package desc
 
 import (
 	"fmt"
-	"ginpapi/internal/app/gapi/start"
-	"ginpapi/internal/gen"
+	"ginp-api/internal/app/gapi/start"
+	"ginp-api/internal/gen"
 	"io/ioutil"
 	"reflect"
 )

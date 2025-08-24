@@ -3,11 +3,11 @@ package suser
 import (
 	"fmt"
 
-	"ginpapi/internal/app/gapi/entity"
-	"ginpapi/internal/app/gapi/model/user/muser"
-	scommon "ginpapi/internal/app/gapi/service/system/common"
-	"ginpapi/internal/db/mysql"
-	"ginpapi/pkg/where"
+	"ginp-api/internal/app/gapi/entity"
+	"ginp-api/internal/app/gapi/model/user/muser"
+	scommon "ginp-api/internal/app/gapi/service/system/common"
+	"ginp-api/internal/db/mysql"
+	"ginp-api/pkg/where"
 )
 
 var User *muser.Model
@@ -28,7 +28,7 @@ func UpdateUserInfo(user *entity.User, emailCode string) error {
 	}
 	//查询出旧的信息
 	oldUser, err := Model().FindOne(where.New(muser.FieldID, "=", user.ID).Conditions())
-	if oldUser == nil || oldUser.ID <= 0{
+	if oldUser == nil || oldUser.ID <= 0 {
 		return fmt.Errorf("get user failed: %v", err)
 	}
 
@@ -59,7 +59,7 @@ func UpdateUserInfo(user *entity.User, emailCode string) error {
 			passwordChanged = true
 		}
 	}
-	
+
 	if passwordChanged || (user.Email != "" && user.Email != oldUser.Email) {
 		//如果邮箱验证码不为空
 		if emailCode != "" {
@@ -82,7 +82,7 @@ func UpdateUserInfo(user *entity.User, emailCode string) error {
 		}
 
 		//修改邮箱
-		if user.Email != "" && user.Email != oldUser.Email {	
+		if user.Email != "" && user.Email != oldUser.Email {
 			//查询新邮箱是否存在
 			oldEmailUser, _ := Model().FindOne(where.New(muser.FieldEmail, "=", user.Email).Conditions())
 			if oldEmailUser != nil && oldEmailUser.ID > 0 {

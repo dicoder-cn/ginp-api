@@ -3,10 +3,10 @@ package suser
 import (
 	"errors"
 	"fmt"
-	"ginpapi/internal/app/gapi/entity"
-	"ginpapi/internal/app/gapi/model/user/muser"
+	"ginp-api/internal/app/gapi/entity"
+	"ginp-api/internal/app/gapi/model/user/muser"
 
-	"ginpapi/pkg/where"
+	"ginp-api/pkg/where"
 	"time"
 
 	"github.com/golang-jwt/jwt/v4"
@@ -91,14 +91,14 @@ func Register(user *entity.User) (*entity.User, string, error) {
 	wheres := where.New(muser.FieldUsername, "=", user.Username)
 	res, _ := model.FindOne(wheres.Conditions())
 	if res != nil && res.ID > 0 {
-		return nil, "", errors.New("username already exists "+res.Username)
+		return nil, "", errors.New("username already exists " + res.Username)
 	}
 
 	// 验证邮箱是否已存在
 	wheres = where.New(muser.FieldEmail, "=", user.Email)
 	resInfoEmail, _ := model.FindOne(wheres.Conditions())
-	if resInfoEmail != nil && resInfoEmail.ID > 0	 {
-		return nil, "", errors.New("email already exists "+resInfoEmail.Email)
+	if resInfoEmail != nil && resInfoEmail.ID > 0 {
+		return nil, "", errors.New("email already exists " + resInfoEmail.Email)
 	}
 	// 创建账户 - 使用新的安全密码哈希算法
 	hashedPassword, err := HashPassword(user.Password)
@@ -126,13 +126,13 @@ func LoginByEmail(email string, password string) (*entity.User, string, error) {
 	if err != nil {
 		return nil, "", err
 	}
-	
+
 	// 验证密码
 	passwordValid, err := VerifyPassword(password, userInfo.Password)
 	if err != nil {
 		return nil, "", fmt.Errorf("password verification error: %w", err)
 	}
-	
+
 	if !passwordValid {
 		return nil, "", errors.New("email or password is incorrect")
 	}
@@ -146,7 +146,6 @@ func LoginByEmail(email string, password string) (*entity.User, string, error) {
 	return userInfo, token, nil
 }
 
-
 // 通过用户名登录
 func LoginByUsername(username string, password string) (*entity.User, string, error) {
 	// 验证用户名和密码
@@ -156,17 +155,17 @@ func LoginByUsername(username string, password string) (*entity.User, string, er
 	if err != nil {
 		return nil, "", err
 	}
-	
+
 	// 验证密码
 	passwordValid, err := VerifyPassword(password, userInfo.Password)
 	if err != nil {
 		return nil, "", fmt.Errorf("password verification error: %w", err)
 	}
-	
+
 	if !passwordValid {
 		return nil, "", errors.New("username or password is incorrect")
 	}
-	
+
 	// 生成Token
 	token, err := GenerateLoginToken(userInfo.ID, userInfo.Username, 1)
 	if err != nil {

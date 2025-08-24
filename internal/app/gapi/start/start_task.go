@@ -1,6 +1,6 @@
 package start
 
-import "ginpapi/pkg/task"
+import "ginp-api/pkg/task"
 
 func startTask() {
 	go func() {

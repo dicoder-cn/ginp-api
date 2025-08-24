@@ -1,6 +1,6 @@
 package desc
 
-import "ginpapi/internal/gen"
+import "ginp-api/internal/gen"
 
 const (
 	ReplaceEntityName = "$ENTITY_NAME$"
@@ -10,7 +10,7 @@ const (
 	ReplaceApiNameBig       = "$API_NAME_BIG$"
 	ReplaceApiNameLine      = "$API_NAME_LINE$"
 	PlaceholderRouterImport = "//{{placeholder_router_import}}//"
-	RouterReplaceStr        = `_ "ginpapi/internal/app/gapi/controller/`
+	RouterReplaceStr        = `_ "ginp-api/internal/app/gapi/controller/`
 )
 
 // 基础替换数据 传入大驼峰如 $ENTITY_NAME$Group
@@ -21,15 +21,14 @@ func getBaseReplaceMap(BigCameName string, parentDir ...string) map[string]strin
 		ReplaceEntityName:  BigCameName,
 		ReplaceLineName:    lineName,
 		ReplacePackageName: gen.NameToAllSmall(lineName),
-		"$PARENT_DIR$":    "",
+		"$PARENT_DIR$":     "",
 	}
-	
+
 	if len(parentDir) > 0 && parentDir[0] != "" {
 		replaceData["$PARENT_DIR$"] = parentDir[0] + "/"
 	}
 	return replaceData
 }
-
 
 // GetBaseReplaceMap 公共接口，用于外部包调用
 func GetBaseReplaceMap(BigCameName string) map[string]string {

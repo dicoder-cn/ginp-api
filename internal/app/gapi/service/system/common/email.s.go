@@ -2,7 +2,7 @@ package scommon
 
 import (
 	"fmt"
-	"ginpapi/pkg/email"
+	"ginp-api/pkg/email"
 	"math/rand"
 	"strconv"
 	"time"
@@ -33,8 +33,6 @@ type EmailService struct {
 func (s *EmailService) SendEmail(toEmail, title, content string) error {
 	return s.EmailClient.SendEmail(toEmail, title, content)
 }
-
-
 
 // 发送邮箱验证码
 func (s *EmailService) SendCode(toEmail string) error {

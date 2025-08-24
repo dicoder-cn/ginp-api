@@ -2,9 +2,9 @@ package muser
 
 import (
 	"fmt"
-	"ginpapi/internal/app/gapi/entity"
-	"ginpapi/pkg/dbops"
-	"ginpapi/pkg/where"
+	"ginp-api/internal/app/gapi/entity"
+	"ginp-api/pkg/dbops"
+	"ginp-api/pkg/where"
 
 	"gorm.io/gorm"
 )

@@ -1,7 +1,7 @@
 package desc
 
 import (
-	"ginpapi/internal/gen"
+	"ginp-api/internal/gen"
 )
 
 // entityName传入大驼峰如 UserGroup

@@ -1,11 +1,11 @@
 package cuser
 
 import (
-	"ginpapi/internal/app/gapi/entity"
-	scommon "ginpapi/internal/app/gapi/service/system/common"
-	"ginpapi/internal/app/gapi/service/user/suser"
+	"ginp-api/internal/app/gapi/entity"
+	scommon "ginp-api/internal/app/gapi/service/system/common"
+	"ginp-api/internal/app/gapi/service/user/suser"
 
-	"ginpapi/pkg/ginp"
+	"ginp-api/pkg/ginp"
 )
 
 const ApiRegisterByEmail = "/api/user/register_by_email" //API Path
@@ -26,8 +26,7 @@ func RegisterByEmail(c *ginp.ContextPlus) {
 	userInfo, token, err := suser.Register(&entity.User{
 		Username: requestParams.Username,
 		Password: requestParams.Password,
-		Email: requestParams.Email,
-		
+		Email:    requestParams.Email,
 	})
 	if err != nil {
 		c.Fail("fail:" + err.Error())
@@ -59,7 +58,7 @@ func init() {
 		HttpType:       ginp.HttpPost,                         //http请求类型
 		NeedLogin:      false,                                 //是否需要登录
 		NeedPermission: false,                                 //是否需要鉴权
-		PermissionName: "user.register_by_email",           //完整的权限名称,会跟权限表匹配
+		PermissionName: "user.register_by_email",              //完整的权限名称,会跟权限表匹配
 		Swagger: &ginp.SwaggerInfo{
 			Title:       "register_by_email",
 			Description: "",

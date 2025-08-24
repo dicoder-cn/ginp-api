@@ -1,8 +1,8 @@
 package start
 
 import (
-	"ginpapi/configs"
-	"ginpapi/pkg/email"
+	"ginp-api/configs"
+	"ginp-api/pkg/email"
 )
 
 var emailClient *email.EmailClient

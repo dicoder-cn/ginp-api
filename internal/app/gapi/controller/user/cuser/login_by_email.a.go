@@ -1,9 +1,9 @@
 package cuser
 
 import (
-	"ginpapi/internal/app/gapi/service/user/suser"
+	"ginp-api/internal/app/gapi/service/user/suser"
 
-	"ginpapi/pkg/ginp"
+	"ginp-api/pkg/ginp"
 )
 
 func LoginByEmail(c *ginp.ContextPlus) {
@@ -12,14 +12,14 @@ func LoginByEmail(c *ginp.ContextPlus) {
 		c.FailData("request param error:" + err.Error())
 		return
 	}
-	
+
 	// 直接调用 service 层的 LoginByEmail 函数
-	userInfo, token, err := suser.LoginByEmail(	requestParams.Email, requestParams.Password)
+	userInfo, token, err := suser.LoginByEmail(requestParams.Email, requestParams.Password)
 	if err != nil {
 		c.FailData(err.Error())
 		return
 	}
-	
+
 	// 返回成功结果
 	c.SuccessData(&RespondLogin{
 		Token:    token,

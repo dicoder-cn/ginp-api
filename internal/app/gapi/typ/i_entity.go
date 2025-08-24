@@ -1,6 +1,6 @@
 package typ
 
-import "ginpapi/internal/gen"
+import "ginp-api/internal/gen"
 
 type IEntity interface {
 	// GetEntityName 获取实体名称

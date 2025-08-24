@@ -1,6 +1,6 @@
 package configs
 
-import "ginpapi/pkg/cfg"
+import "ginp-api/pkg/cfg"
 
 const (
 	//SecretID 腾讯云API密钥ID

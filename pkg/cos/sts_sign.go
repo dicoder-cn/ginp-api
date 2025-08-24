@@ -4,7 +4,7 @@ import (
 	"context"
 	"errors"
 	"fmt"
-	"ginpapi/pkg/utils"
+	"ginp-api/pkg/utils"
 	"net/http"
 	"net/url"
 	"strings"
@@ -23,16 +23,16 @@ type STSSigner struct {
 
 // STSConfig 临时密钥配置
 type STSConfig struct {
-	SecretID    string
-	SecretKey   string
-	Bucket      string
-	Region      string
+	SecretID       string
+	SecretKey      string
+	Bucket         string
+	Region         string
 	CustomFileName string // 自定义文件名,如果不为空则使用该文件名，现在已经有的话则会覆盖，适用于头像等场景
-	Duration    int64  // 临时密钥有效期（秒）
-	AllowPrefix string // 允许操作的路径前缀
-	AppID       string // APPID
-	UserId      uint   // 用户ID
-	StudioId    uint   // 工作室ID
+	Duration       int64  // 临时密钥有效期（秒）
+	AllowPrefix    string // 允许操作的路径前缀
+	AppID          string // APPID
+	UserId         uint   // 用户ID
+	StudioId       uint   // 工作室ID
 }
 
 // NewSTSSigner 创建一个新的 STSSigner 实例
@@ -114,8 +114,6 @@ func getFileType(ext string) string {
 	}
 }
 
-
-
 // GeneratePresignedURL 生成基于临时密钥的预签名 URL
 func (s *STSSigner) GeneratePresignedURL(fileExt string) (string, string, error) {
 	if s.config == nil {
@@ -123,10 +121,10 @@ func (s *STSSigner) GeneratePresignedURL(fileExt string) (string, string, error)
 	}
 	// 自定义文件名
 	fileName := s.config.CustomFileName
-	if s.config.CustomFileName == "" {//没有自定义文件名，则随机生成
+	if s.config.CustomFileName == "" { //没有自定义文件名，则随机生成
 		formattedTime := time.Now().Format("20060102150405")
 		fileName = fmt.Sprintf("%s_%d_%s", formattedTime, time.Now().Unix(), utils.GenerateRandomString(8))
-	} 
+	}
 	fileType := getFileType(fileExt)
 
 	// 如果工作室ID为0，则表示为用户上传的数据 uploads/user/0_1000/1/images/1.png
@@ -139,7 +137,7 @@ func (s *STSSigner) GeneratePresignedURL(fileExt string) (string, string, error)
 		// 用户上传的数据
 		groupPath := GetUserDataPath(s.config.UserId)
 		fileKey = fmt.Sprintf("%s/%s/%s.%s", groupPath, fileType, fileName, fileExt)
-	} 
+	}
 
 	presignedURL, err := s.client.Object.GetPresignedURL2(context.Background(), "PUT", fileKey, time.Duration(s.config.Duration)*time.Second, nil)
 	if err != nil {

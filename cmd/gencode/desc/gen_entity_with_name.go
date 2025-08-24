@@ -1,7 +1,7 @@
 package desc
 
 import (
-	"ginpapi/internal/gen"
+	"ginp-api/internal/gen"
 )
 
 // GenEntityWithName 使用传入的实体名称生成实体

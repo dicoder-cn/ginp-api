@@ -1,6 +1,6 @@
 package configs
 
-import "ginpapi/pkg/cfg"
+import "ginp-api/pkg/cfg"
 
 const ConfigKeyEmailClientAccount = "email.client.account"
 const ConfigKeyEmailClientPwd = "email.client.pwd"

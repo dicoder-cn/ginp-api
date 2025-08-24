@@ -1,9 +1,10 @@
 package cmd
 
 import (
-	"ginpapi/cmd/gencode/desc"
-	"github.com/spf13/cobra"
+	"ginp-api/cmd/gencode/desc"
 	"strings"
+
+	"github.com/spf13/cobra"
 )
 
 // rmCmd 表示删除代码的命令
@@ -30,7 +31,7 @@ var crudRmCmd = &cobra.Command{
 		if entities != "" {
 			// 分割实体名称列表
 			entityList := strings.Split(entities, ",")
-			
+
 			// 清理实体名称（去除空格）
 			cleanedEntities := []string{}
 			for _, entity := range entityList {
@@ -39,7 +40,7 @@ var crudRmCmd = &cobra.Command{
 					cleanedEntities = append(cleanedEntities, entity)
 				}
 			}
-			
+
 			// 设置实体名称列表并删除代码
 			desc.GetPwd()
 			desc.RemoveBatchCrudWithParent(cleanedEntities, parentDir)
@@ -54,10 +55,10 @@ var crudRmCmd = &cobra.Command{
 func init() {
 	// 将rm命令添加到gen命令
 	genCmd.AddCommand(rmCmd)
-	
+
 	// 将crud子命令添加到rm命令
 	rmCmd.AddCommand(crudRmCmd)
-	
+
 	// 为crud删除命令添加标志
 	crudRmCmd.Flags().StringP("entities", "e", "", "要删除CRUD代码的实体名称列表，多个实体用逗号分隔（例如：UserGroup,UserRole）")
 	crudRmCmd.Flags().StringP("parent", "p", "", "父级目录名称（例如：user）")

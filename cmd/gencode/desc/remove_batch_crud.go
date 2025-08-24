@@ -2,7 +2,7 @@ package desc
 
 import (
 	"fmt"
-	"ginpapi/internal/gen"
+	"ginp-api/internal/gen"
 	"os"
 	"strings"
 )
@@ -116,10 +116,10 @@ func RemoveBatchCrudInteractive() {
 
 	// 获取实体名称列表
 	entitiesInput := gen.Input("请输入要删除CRUD代码的实体名称列表，多个实体用逗号分隔（例如：UserGroup,UserRole）：", nil)
-	
+
 	// 分割实体名称列表
 	entities := strings.Split(entitiesInput, ",")
-	
+
 	// 清理实体名称（去除空格）
 	cleanedEntities := []string{}
 	for _, entity := range entities {
@@ -128,14 +128,14 @@ func RemoveBatchCrudInteractive() {
 			cleanedEntities = append(cleanedEntities, entity)
 		}
 	}
-	
+
 	// 确认删除操作
 	confirm := gen.Input(fmt.Sprintf("确认删除以下实体的CRUD代码吗？(%s) [y/N]: ", strings.Join(cleanedEntities, ", ")), nil)
 	if strings.ToLower(confirm) != "y" && strings.ToLower(confirm) != "yes" {
 		fmt.Println("操作已取消")
 		return
 	}
-	
+
 	// 调用批量删除函数
 	RemoveBatchCrud(cleanedEntities)
 }
@@ -164,27 +164,27 @@ func removeFileIfExists(filePath string) bool {
 // removeEmptyDirectories 删除空目录
 func removeEmptyDirectories(lineName string, parentDir string) {
 	allSmallName := gen.NameToAllSmall(lineName)
-	
+
 	// 尝试删除controller目录
 	if parentDir != "" {
 		controllerDir := GetDirController() + "/" + parentDir + "/c" + allSmallName
 		removeEmptyDir(controllerDir)
-		
+
 		// 尝试删除service目录
 		serviceDir := GetDirService() + "/" + parentDir + "/s" + allSmallName
 		removeEmptyDir(serviceDir)
-		
+
 		// 尝试删除model目录
 		modelDir := GetDirModel() + "/" + parentDir + "/m" + allSmallName
 		removeEmptyDir(modelDir)
 	} else {
 		controllerDir := GetDirController() + "/c" + allSmallName
 		removeEmptyDir(controllerDir)
-		
+
 		// 尝试删除service目录
 		serviceDir := GetDirService() + "/s" + allSmallName
 		removeEmptyDir(serviceDir)
-		
+
 		// 尝试删除model目录
 		modelDir := GetDirModel() + "/m" + allSmallName
 		removeEmptyDir(modelDir)
