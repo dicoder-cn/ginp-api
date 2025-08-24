@@ -1,9 +1,10 @@
 package dbs
 
 import (
-	"ginpapi/internal/db/mysql"
-	"ginpapi/internal/db/pgsql"
-	"ginpapi/internal/db/sqlite"
+	"ginp-api/configs"
+	"ginp-api/internal/db/mysql"
+	"ginp-api/internal/db/pgsql"
+	"ginp-api/internal/db/sqlite"
 
 	"gorm.io/gorm"
 )
@@ -14,7 +15,14 @@ const (
 	DbTypeSqlite = "sqlite"
 )
 
-const useDbType = DbTypePgsql
+var useDbType = DbTypePgsql
+
+func init() {
+	dbType := configs.SystemDbType()
+	if dbType != "" {
+		useDbType = DbTypePgsql
+	}
+}
 
 var (
 	DbRead  *gorm.DB
