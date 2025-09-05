@@ -24,6 +24,9 @@ export PATH="/path/to/ginp-api/build:$PATH"
 
 ## 使用方法
 
+### 生成swagger文档
+cd ./cmd/gencode && go run main.go swagger
+
 ### 查看版本
 ```bash
 gapi -v

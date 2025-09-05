@@ -29,6 +29,13 @@ server:
     port: "8082"
 sqlite:
     db_path: data.db
+system:
+    app:
+        name: dianji
+    db:
+        type: mysql
+    usercenter:
+        url: http://localhost:8082
 tencent:
     cos:
         allow_prefix: ""
