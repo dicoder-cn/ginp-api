@@ -23,3 +23,7 @@ func init() {
 		},
 	})
 }
+
+func GetAllRouter() []ginp.RouterItem {
+	return ginp.GetAllRouter()
+}
