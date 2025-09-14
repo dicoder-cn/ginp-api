@@ -39,14 +39,14 @@ func Create(c *ginp.ContextPlus) {
 }
 
 func Update(c *ginp.ContextPlus) {
-	var params *entity.$ENTITY_NAME$
+	var params *UpdateDto
 	if err := c.ShouldBindJSON(&params); err != nil {
 		c.Fail("请求参数有误" + err.Error())
 		return
 	}
 	wheres := where.Format(where.OptEqual("id", params.ID))
 	//也可以自己创建并传入读写db: tables.New$ENTITY_NAME$(wdb,rdb)
-	err := s$PACKAGE_NAME$.Model().Update(wheres, params)
+	err := s$PACKAGE_NAME$.Model().Update(wheres, params.UpdateData, params.UpdateFields...)
 	if err != nil {
 		c.Fail("修改失败" + err.Error())
 		return
